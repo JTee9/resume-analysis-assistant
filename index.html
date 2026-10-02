@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume Intelligence Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header><div><h1>Resume Intelligence Assistant</h1>
+<p>Understand technical experience. Identify gaps. Ask better questions.</p></div>
+<button id="clearAll" class="danger">Clear All</button></header>
+<main>
+<section><h2>Candidate resume</h2>
+<div class="row"><label class="file">Upload PDF or DOCX<input type="file" id="file" accept=".pdf,.docx,.doc" hidden></label>
+<span class="muted">or paste text below. Files are read in your browser and never uploaded.</span></div>
+<div id="fileInfo" class="info" hidden><span id="fileMeta"></span><button id="removeFile" class="ghost">Remove file</button></div>
+<div id="status" class="status" role="status"></div>
+<label for="resume">Resume text <span id="count" class="muted">0 characters</span></label>
+<textarea id="resume" rows="14" placeholder="Paste resume text, or upload a file and review the extracted text here."></textarea></section>
+
+<section><h2>Job descriptions <span class="muted">(optional)</span></h2>
+<div id="jds"></div>
+<div class="row"><button id="addJd">Add another job description</button><button id="clearJds" class="ghost">Clear all job descriptions</button></div></section>
+
+<section><h2>Analysis prompt</h2>
+<button id="gen" class="primary">Generate AI Analysis Prompt</button>
+<div id="genStatus" class="status" role="status"></div>
+<div id="promptBox" hidden>
+<p class="note">Copy the complete prompt and paste it into ChatGPT, Claude, Gemini, or another LLM. Return here and paste the response below.</p>
+<textarea id="prompt" rows="16" readonly></textarea>
+<div class="row"><button id="copy" class="primary">Copy Complete Prompt</button><button id="dlPrompt">Download Prompt as .txt</button><button id="editPrompt" class="ghost">Edit Prompt</button></div></div></section>
+
+<section><h2>LLM response</h2>
+<label for="resp">Paste AI Analysis Here</label>
+<textarea id="resp" rows="10"></textarea>
+<div class="row"><button id="fmt" class="primary">Format and Display Analysis</button><button id="clrResp" class="ghost">Clear Response</button>
+<button id="dlMd">Download Analysis as .md</button><button id="dlTxt">Download Analysis as .txt</button></div>
+<article id="out" class="out" hidden></article></section>
+</main>
+<footer>Nothing is stored or transmitted. Candidate data lives in this tab's memory only.</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="app.js"></script>
+</body></html>
