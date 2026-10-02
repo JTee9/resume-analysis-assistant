@@ -1,4 +1,4 @@
-# Resume Intelligence Assistant
+# Resume Analysis Assistant
 
 Static, browser-only tool: extract resume text (PDF/DOCX), add job descriptions, generate a complete LLM prompt, then paste the response back to format and download it. No backend, API key, database, analytics, or storage. Everything stays in browser memory.
 
